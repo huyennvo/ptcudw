@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 16pt;
+        }
+        .units {
+            height: 500px;
+            width: 100%; 
+            /* width default value là 100%; height default value là 0*/
+            background-color: red;
+            font-size: 20pt;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .percent {
+            background-color: blue;
+            height: 50%; 
+            width: 50%;
+            /* bằng 50% của phần tử cha, tức 50% của units */
+        }
+        .rem {
+            font-size: 1rem;
+            /* so vs phần tử cha */
+        }
+        .em {
+            font-size: 2em;
+            /* so vs phần tử gốc */
+        }
+        .vp {
+            width: 100vw;
+            /* độ dài màn hình trình duyệt */
+            background-color: green;
+        }
+        .textcolor {
+            color: aqua;
+        }
+        .textalign {
+            /* mặc định là căng trái */
+            text-align: justify;
+        }
+        .textdeco {
+            text-decoration: double;
+        }
+        a {
+            text-decoration: none;
+            /* làm mất dấu gạch dưới khi gắn link */
+        }
+        .letterspacing {
+            letter-spacing: 5px;
+        }
+        .gt {
+            text-transform: uppercase;
+            width: 200px;
+            background-color: red;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* chọn arial, nếu ko có chọn helvetica còn nếu ko có thì chọn bất kì font chữ nào thuộc họ sans-serif (chữ ko chân) */
+            font-weight: 800; 
+            /* từ 100 đến 900 hoặc có thể chọn bold */
+            font-size: 1rem;
+            /* font: italic 800 1rem sans-serif; */
+            /* cách viết font shorthand */
+            /* width: auto; hight: auto; mặc định là w =100, h = theo độ dài content*/
+        }
+    </style>
+</head>
+<body>
+    <div class="units">
+        <div class="percent">Percent</div>
+        <div class="rem">Rem</div>
+        <div class="em">Em</div>
+        <div class="vp">viewport</div>
+        <div class="ptpx">Point, Pixel</div>
+    </div>
+    <h1>Text formatin</h1>
+    <p class="textcolor">Text color</p>
+    <p class="textalign">Text align</p>
+    <p class="textdeco">Text decoration
+        <a href="https://www.notion.so/B-i-3-CSS-0fa3d3bc2a21480f8b7b6173dd528280">Notion</a>
+    </p>
+    <p class="texttrf">Text transform</p>
+    <p class="letterspacing">Letter spacing</p>
+    <p class="gt">Giới thiệu</p>
+</body>
+</html>

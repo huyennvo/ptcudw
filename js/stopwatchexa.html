@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #startb{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hien thi dong ho dem gio co gio:phut:giay:1/100giay -->
+    <!-- Co 3 nut: start, stop, reset -->
+    <div id="stopwatch"></div>
+    <button id="stopb" onclick="stopw()">stop</button>
+    <button id="startb" onclick="startw()">start</button>
+    <button onclick="reset()">reset</button>
+    <script>
+        var h=0;
+        var m=0;
+        var s=0;
+        var ms=0;
+        var sw=document.getElementById('stopwatch');
+
+        function displayw(h,m,s,ms){
+            var h1=h; if (h1<10) h1='0'+h1;
+            var m1=m;if(m1<10) m1='0'+m1;
+            var s1=s;if(s1<10) s1='0'+s1;
+            var ms1=ms;if (ms1<10) ms1='00'+ms1; else if(ms1<100) ms1='0'+ms1;
+            sw.innerHTML=h1+':'+m1+':'+s1+':'+ms1;
+        }
+        function updatew(){
+            ms++;
+            if(ms>100){ms=0;s++;}
+            if(s>60){s=0;m++;}
+            if(m>60){m=0;h++;}
+            displayw(h,m,s,ms);
+            // console.log(ms);
+        }
+        var x=setInterval(updatew,10);
+        function reset(){
+            h=0;m=0;s=0;ms=0;
+            clearInterval(x);
+            displayw(h,m,s,ms);
+            document.getElementById('startb').style.display='inline-block';
+            document.getElementById('stopb').style.display='none';
+        }
+        function stopw(){
+            clearInterval(x);
+            document.getElementById('startb').style.display='inline-block';
+            document.getElementById('stopb').style.display='none';
+        }
+        function startw(){
+            x=setInterval(updatew,10);
+            document.getElementById('startb').style.display='none';
+            document.getElementById('stopb').style.display='inline-block';
+        }  
+    </script>
+</body>
+</html>

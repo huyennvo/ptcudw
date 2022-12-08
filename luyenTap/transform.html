@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes xoay{
+            from{transform: rolate(0deg)}
+            to{transform: rolate(360deg);}
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation-name: xoay;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        div:hover{
+            transform: rotate(80deg);
+        }
+    @keyframes runningtxt {
+        from{left:0px}
+        to{left:200px;}
+    }
+    span{
+        position: relative;
+        animation: runningtxt 5s linear infinite;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span>Txt running</span>
+</body>
+</html>

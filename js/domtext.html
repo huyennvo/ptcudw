@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="text" onclick="document.getElementById('text').innerText='ban da click vao day'">
+        <p>
+            this is content 
+
+
+
+            3 enter cong vs 3 space
+        </p>
+    </div>
+    <div ></div>
+    <script>
+        var a = document.getElementById('text');
+        console.log(a.innerText);
+        console.log(a.innerHTML);
+        console.log(a.outerHTML);
+        console.log(a.style);
+        a.style.fontSize = "2rem";
+        a.onmouseover = function(){
+            a.innerText='ban da di chuot vao day';
+        }
+        function mouseout(){
+            a.innerText = 'Ban da di chuot ra khoi vung nay';
+        }
+        a.onmouseout = mouseout;
+    </script>
+</body>
+</html>

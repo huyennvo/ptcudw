@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background: red;
+            /* display: inline-block; */
+            float: left;
+            /* bám vào trái của phần tử cha */
+
+        }
+        .box2{
+            background: green;
+            /* display: inline-block; */
+            float: left;
+            /* bám vào trái của box1 */
+        }
+        /* để các khối lên cùng 1dongf: thêm display inline cho cả 2 */
+
+        /* cách căn giữa phần tử con: thêm magin 0 auto cho phần tử cha */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="countdown">
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        var cd = document.querySelector('#countdown ul');
+        var cdown = document.getElementById('countdown');
+        var i = 5;
+        cdown.innerText = i;
+        function countdown(){
+            i--;
+            if(i==0) chearInterval(x);
+            cdown.innerText = i;
+        }
+        var x = setInterval(countdown,1000);
+    </script>
+</body>
+</html>

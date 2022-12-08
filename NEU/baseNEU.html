@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>NEU</title>
+    <style>
+        /* reset css */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        :root{
+            --maincolor:#2765CA;
+            --navcolor:#1C4F9E;
+        }
+        html{
+            font-family:Helvetica, Tahoma, Arial, sans-serif;
+            font-size:16px;
+        }
+        body{
+            background:#E2E2E2;
+        }
+        #page{
+            width:1180px;
+            height: 100vh;/*de the hien cac khoi tren layout*/
+            background-color: white;
+            margin: 0 auto;
+            padding:0 5px;
+        }
+        #page >div{
+            /* border:1px solid black; */
+        }
+        #page .nav{
+            background: var(--navcolor);
+            height: 34px;
+        }
+        #page .nav .navmenu{
+            height:100%;
+            float:left;
+        }
+        #page .nav .navmenu ul{
+            height: 100%;
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        #page .nav .navmenu ul li{
+            float:left;
+            /* border: 1px solid red; */
+            height: 100%;
+            line-height: 34px;
+            margin: 0px 15px;
+        }
+        #page .nav .navmenu ul li a{
+            color:white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        #page .nav .search{
+            width: 187px;
+            height: 24px;
+            background: rgba(255,255,255, 0.15);
+            float:left;
+            margin: 5px 0px;
+            border-radius:12px;
+
+        }
+        #page .nav .search input{
+            height: 100%;
+            width: 150px;
+            margin-left:8px;
+            background-color: transparent;
+            border-style:none;
+            font-weight: 800;
+            color:#fff;
+            outline: none;
+            font-size:1rem;
+        }
+        #page .nav .search span{
+            color:#fff;
+            font-size:1.1rem;
+        }
+        /* CSS banner */
+        
+        #page .banner{
+            height: 192px;
+            background: red;
+        }
+        #page .banner .largeimg{
+            height: 100%;
+            width: 900px;
+            float:left;
+        }
+        #page .banner .largeimg img{
+            height: 100%;
+            width: 100%;
+        }
+        @keyframes imgchange {
+            0%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/1.jpg");}
+            16.67%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/2.jpg");}
+            33.33%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/3.jpg");}
+            50%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/4.jpg");}
+            66.67%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/5.jpg");}
+            83.33%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/6.jpg");}
+            100%{background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/7.jpg");}
+        }
+        #page .banner .smallimg{
+            height: 100%;
+            width: 270px;
+            /* background-image: url("https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/4.jpg"); */
+            background-size:cover;
+            animation: imgchange 70s ease-in-out infinite;
+            animation-fill-mode: forwards;
+            float:left;
+        }
+        /* CSS main menu */
+        #page .mainmenu{
+            height: 50px;
+            background: var(--maincolor);
+        }
+        #page .mainmenu>ul{
+            height: 100%;
+            list-style-type: none;
+        }
+        #page .mainmenu>ul>li{
+            height: 100%;
+            float:left;
+            line-height: 50px;
+            color:#fff;
+            text-transform: uppercase;
+            font-weight: 800;
+            padding:0 10px;
+            position:relative;
+        }
+        #page .mainmenu>ul>li:last-child >ul{
+            left:-12px;
+            width:250px; 
+        }
+        #page .mainmenu>ul>li:hover >ul{
+            display:block;
+        }
+        #page .mainmenu>ul>li:hover{
+            color:yellow;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #page .mainmenu>ul>li>ul{
+            list-style-type: none;
+            background: var(--maincolor);
+            position: absolute;
+            left:0px;
+            width:270px;
+            display:none;
+        }
+        #page .mainmenu>ul>li>ul>li{
+            text-transform: none;
+            font-weight: normal;
+            height: 34px;
+            /* border:1px solid red; */
+            line-height: 34px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size:1rem;
+            color:#fff;
+            position: relative;
+            background-color: var(--maincolor);
+            /* border:1px solid red; */
+            /* Khong xuong dong */
+            /* An di nhung text vuot qua gioi han */
+            /* Thay the nhung txt bi an di bang 3 dau cham */
+            /* background: var(--maincolor); */
+        }
+        @keyframes lac{
+            0%{left:-10px;}
+            20%{left:8px;}
+            40%{left:-6px;}
+            60%{left:4px;}
+            80%{left:-2px;}
+            100%{left:0px;}
+        }
+        #page .mainmenu>ul>li>ul>li:hover{
+            color:yellow;
+            animation: lac 1s ease;
+        }
+        #page .mainmenu>ul>li>ul>li::before{
+            content:">>";
+            padding-right: 5px;
+            font-size:0.8rem;
+        }
+        #page .ads{
+            height: 33px;
+            background-color: var(--maincolor);
+            margin: 10px 0px;
+        }
+        #page .content{
+            height: 430px;
+            background-color: yellow;
+        }
+        #page .content .left-content{
+            height: 100%;
+            width: 670px;
+            overflow: hidden;
+        }
+        #page .content .left-content .content-block{
+            width:100%;
+            height: 100%;
+            position: relative;
+            animation: slideimg 0.5s;
+        }
+        #page .content .left-content .content-block img{
+            width:100%;
+            height: 100%;
+        }
+        #page .content .left-content .content-block a{
+            display:block;
+            background:rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            position: absolute;
+            bottom:0;
+            color:white;
+        }
+        @keyframes slideimg{
+            0%{left:100%;}
+            100%{left:0};
+        }
+        #page .links{
+            height:100px;
+            background-color: cyan;
+            margin: 10px 0;
+        }
+        #page .footer{
+            height: 200px;
+            background-color: var(--maincolor);
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div class="nav">
+            <div class="navmenu">
+                <ul>
+                    <li><a href="">Mục tiêu pt bền vững</a></li>
+                    <li><a href="">Thông tin nội bộ</a></li>
+                    <li><a href="">E-office</a></li>
+                    <li><a href="">E-learning</a></li>
+                    <li><a href="">Dịch vụ công</a></li>
+                    <li><a href="">HĐ Giáo sư</a></li>
+                    <li><a href="">Sitemap</a></li>
+                    <li><a href="">Email</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm ...">
+                <span class="glyphicon glyphicon-search"></span>
+            </div>
+            <div class="lang"></div>
+        </div>
+        <div class="banner">
+            <div class="largeimg">
+                <img src="https://neu.edu.vn/Resources/Images/SubDomain/HomePage/banner/thumbnail_Image.jpg" alt="">
+            </div>
+            <div class="smallimg">
+                <!-- <img src="https://neu.edu.vn/Resources/Images/SubDomain/HomePage/Banner2022/4.jpg" alt=""> -->
+            </div>
+        </div>
+        <div class="mainmenu">
+            <ul>
+                <li> Giới thiệu
+                    <ul>
+                        <li>Lịch sử hình thành và phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Chiến lược phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Thư hiệu trưởng</li>
+                        <li>Hệ thống nhận diện</li>
+                        <li>Bản đồ đường đi</li>
+                        <li>Cơ cấu tổ chức</li>
+                        <li>Ba công khai</li>
+                        <li>Mạng lưới cựu sinh viên</li>
+                    </ul>
+                </li>
+                <li>Đơn vị
+                    <ul>
+                        <li>Lịch sử hình thành và phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Chiến lược phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Thư hiệu trưởng</li>
+                        <li>Hệ thống nhận diện</li>
+                        <li>Bản đồ đường đi</li>
+                        <li>Cơ cấu tổ chức</li>
+                        <li>Ba công khai</li>
+                        <li>Mạng lưới cựu sinh viên</li>
+                    </ul>
+                </li>
+                <li>Đào tạo</li>
+                <li>Hợp tác quốc tế</li>
+                <li>Nghiên cứu khoa học</li>
+                <li>Tuyển sinh</li>
+                <li>Dịch vụ</li>
+                <li>Đảng - Đoàn thể</li>
+                <li>Thông báo - Tin tức
+                    <ul>
+                        <li>Lịch sử hình thành và phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Chiến lược phát triển trường đại học kinh tế quốc dân</li>
+                        <li>Thư hiệu trưởng</li>
+                        <li>Hệ thống nhận diện</li>
+                        <li>Bản đồ đường đi</li>
+                        <li>Cơ cấu tổ chức</li>
+                        <li>Ba công khai</li>
+                        <li>Mạng lưới cựu sinh viên</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="ads">Ads</div>
+        <div class="content">
+            <div class="left-content">
+                <div class="content-block">
+                    <img src="neu1.jpeg" alt="">
+                    <a href="">Chào mừng 68 năm ngày Giải phóng Thủ Đô (10/10/1954 - 10/10/2022)</a>
+                </div>
+                <div class="content-block">
+                    <img src="neu2.jpeg" alt="">
+                    <a href="">Hội nghị giao ban công tác quý III và triển khai công tác quý IV năm 2022</a>
+                </div>
+                <div class="content-block">
+                    <img src="neu3.jpeg" alt="">
+                    <a href="">Hội nghị Tổng kết giai đoạn 1 – Lập kế hoạch triển khai giai đoạn 2 Dự án thư viện điện tử dùng</a>
+                </div>
+                <div class="content-block">
+                    <img src="neu4.jpeg" alt="">
+                    <a href="">Hội thảo Khoa học Quốc tế: “Chuyển đổi số trong chuỗi cung ứng quốc tế”</a>
+                </div>
+                    <script>
+                        var cb=document.querySelectorAll('#page .content .left-content .content-block');
+                        console.log(cb);
+                        var n=cb.length;
+                        for(var i=0;i<n;i++) 
+                            cb[i].style.display='none';
+                        i=0;
+                        setInterval(function(){
+                            cb[i].style.display='none';
+                            i++;
+                            if(i==n) i=0;
+                            cb[i].style.display='block';
+                        },2000);
+                    </script>
+                </div>
+            </div>
+            <div class="right-content">
+                
+            </div>
+        </div>
+        <div class="links">Links</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
+1

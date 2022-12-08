@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            /* relative: so vs vị trí đang đứng */
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            bottom: 0px;
+            /* so vs phần tử cha có thuộc tính position */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+
+        </div>
+    </div>
+</body>
+</html>

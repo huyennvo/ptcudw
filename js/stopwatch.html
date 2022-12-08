@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="clock">
+        <span class="gio">00</span>
+        <span>:</span>
+        <span class="phut">00</span>
+        <span>:</span>
+        <span class="giay">00</span>
+        <span>:</span>
+        <span class="phanTramGiay">00</span>
+        <button onclick="clearInterval(x)">Start</button>
+        <button onclick="x = setInterval(count, 10)">Stop</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+        var clock = document.getElementById('clock');
+        var gio = document.getElementById('gio');
+        var phut = document.getElementById('phut');
+        var giay = document.getElementById('giay');
+        var phanTramGiay = document.getElementById('phanTramGiay');
+        let h = 0, m = 0, s = 0, phanTrams = 0;
+
+        function start() {
+            phanTrams++;
+            if (phanTrams < 10)
+            {
+                phanTramGiay.innerText = "0" + phanTrams;
+                console.log("0" + phanTrams);
+            } 
+            else 
+            {
+                if (phanTramGiay > 99) 
+                {
+                    phanTrams = 0;
+                    s++;
+                    if (s < 10) {
+                        giay.innerText = "0" + s;
+                    }
+                    else {
+                        if (s > 59) {
+                            s = 0;
+                            m++;
+                            if (m < 10) {
+                                phut.innerText = "0" + m;
+                            }
+                            else {
+                                if (m > 59) {
+                                    m = 0;
+                                    h++;
+                                    if (h < 10) {
+                                        gio.innerText = "0" + h;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            giay.innerText = s;
+            phut.innerText = m;
+            gio.innerText = h;
+        }
+        function reset(){
+            s = 0;
+            m = 0;
+            h = 0;
+            clearInterval(x);
+            giay.innerText = s;
+            phut.innerText = m;
+            gio.innerText = h;
+        }
+        var x = setInterval(start, 10);
+    </script>
+</body>
+
+</html>

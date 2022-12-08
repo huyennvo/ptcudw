@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">This is heading</div>
+    <img src="../NEU/img/bannersmall1.jpg" alt="">
+    <script>
+        var a = document.getElementById('heading');
+        //tra ve 1 phan tu
+        console.log(a);
+        console.log(a.id);
+        a.className='newClass';
+        console.log(a.className);
+        //goi id cua a
+        a = document.getElementsByTagName('div');
+        //tra ve 1 mang
+        console.log(a);
+        var b = document.querySelector('#heading');
+        var img = document.getElementsByTagName('img')[0];
+        console.log(img.src);
+
+        
+    </script>
+</body>
+</html>

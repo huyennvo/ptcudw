@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning CSS</title>
+    <style>
+        /* internal */
+    </style>
+    <link rel="stylesheet" href="learnCSS.css">
+    <!-- external -->
+    <style>
+        p.pclass{
+
+        }
+        /* 11đ */
+        p {
+            /* 1đ */
+        }
+        .pclass{
+            /* 10đ */
+        }
+
+        /* div p : toàn bộ thẻ p tìm thấy trong thẻ div
+        * toàn bộ thẻ html
+        div>p toàn bộ thẻ p là con trực tiếp của thẻ div
+        div+p; div-p;
+        tênthẻ.class eg: p.firstclass: tất cả ác thẻ có thuộc tính class = firstclass
+        [attribute] vd: [src] toàn bộ thẻ có thuộc tính src */
+
+        *{
+            color: green;
+        }
+        h1,li{
+            color: red;
+        }
+        ul li{
+            color: blue;
+        }
+        ul span{
+            color: pink;
+        }
+
+        [name] {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 style="background-color: red;">hello</h1>  -->
+    <!-- inline -->
+    <!-- <div class="divclass"></div>  -->
+    <!-- div.divclass -->
+    <!-- inline 1000, #id: 100; .class 10; tagname: 1đ; -->
+    <h1 style="color: red;">CSS selectors</h1>
+    <ul>
+        <span>span con</span>
+        <li>Theo tagname
+            <span>span chau</span>
+        </li>
+        <li>Class</li>
+        <li>Theo ID</li>
+        <li name="tagname">Tagname,tagname</li>
+        <li>tagname tagname</li>
+        <li>tagname>tagname</li>
+    </ul>
+    <input type="file" id="myFile" name="filename">
+</body>
+</html>

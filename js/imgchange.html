@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 600px;
+            height: 100px;
+        }
+        .container .small {
+            width: 100px;
+            height: 100px;
+            
+        }
+        .container .small:hover {
+            border: 2px red solid;
+        }
+        .bigImg {
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img class="bigImg" src="../NEU/img/bannersmall1.jpg" alt="">
+    <div class="container">
+        <img class="small img1" src="../NEU/img/bannersmall1.jpg" alt="">
+        <img class="small img2" src="../NEU/img/bannersmall2.jpg" alt="">
+        <img class="small img3" src="../NEU/img/bannersmall3.jpg" alt="">
+        <img class="small img4" src="../NEU/img/bannersmall4.jpg" alt="">
+        <img class="small img5" src="../NEU/img/bannersmall5.jpg" alt="">
+    </div>
+    <script>
+       // let bigImg = document.getElementsByClassName('bigImg')[0];
+        let imgSelect1 = document.getElementsByClassName('small img1')[0];
+        let imgSelect2 = document.getElementsByClassName('small img2')[0];
+        let imgSelect3 = document.getElementsByClassName('small img3')[0];
+        let imgSelect4 = document.getElementsByClassName('small img4')[0];
+        let imgSelect5 = document.getElementsByClassName('small img5')[0];
+        // let imgSelect = document.getElementsByClassName('small');
+        var bigImg = document.querySelector('.bigImg');
+
+        imgSelect1.onmouseover = function(){
+            bigImg.src = "../NEU/img/bannersmall1.jpg";
+            
+        }
+        imgSelect2.onmouseover = function(){
+            bigImg.src = "../NEU/img/bannersmall2.jpg";
+        }
+        imgSelect3.onmouseover = function(){
+            bigImg.src = "../NEU/img/bannersmall3.jpg";
+        }
+        imgSelect4.onmouseover = function(){
+            bigImg.src = "../NEU/img/bannersmall4.jpg";
+        }
+        imgSelect5.onmouseover = function(){
+            bigImg.src = "../NEU/img/bannersmall5.jpg";
+        }
+
+        // imgSelect.onmouseout = function(){
+        //     switch (click) {
+        //         case "1": bigImg.src = "../NEU/img/bannersmall1.jpg";
+        //         case 2: bigImg.src = "../NEU/img/bannersmall2.jpg";
+        //         case 3: bigImg.src = "../NEU/img/bannersmall3.jpg";
+        //         case 4: bigImg.src = "../NEU/img/bannersmall4.jpg";
+        //         case 5: bigImg.src = "../NEU/img/bannersmall5.jpg";
+        //         default: bigImg.src = "../NEU/img/bannersmall1.jpg";
+        //     }
+        // }
+    </script>
+</body>
+</html>

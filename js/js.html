@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onclick="document.getElementById('jstest').innerHTML='You clicked on me!'">Click</p>
+    <script>
+        var a;
+        if(2<5){
+            console.log('2 nho hon 5');
+        }
+        for(var i=0; 1 < 10; i++){
+            console.log(i);
+        }   
+        // var a=[];
+        // var a=new Array();
+        // var a = ['JS', 'HTML', 'CSS'];
+        // var a = [1,2,3];
+        // a.length; 
+        var a = [];
+        console.log(a);
+        a[0] = 1;
+        var b = ['JS', 'HTML', 'CSS'];
+        var d = b.join(' ');
+        console.log(d);
+        var c = [3,2,5,1];
+        c.sort();
+        console.log(c);
+
+        function tong(a,b){
+            return a+b;
+        }
+        console.log(tong(3,5));
+    </script>
+</body>
+</html>

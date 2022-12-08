@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans Condensed:300' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>    <title>Document</title>
+    
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <style>
+
+        @font-face {
+            font-family: "Open Sans Condensed 1";
+            src: url(font/static/OpenSans_Condensed/OpenSans_Condensed-Bold.ttf);
+        }
+
+        @font-face {
+            font-family: "Open Sans";
+            src: url(font/static/OpenSans/OpenSans-Bold.ttf);
+        }
+
+        @font-face {
+            font-family: "Open Sans 1";
+            src: url(font/static/OpenSans/OpenSans-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --main-color: #2765CA;
+            --nav-color: #1C4F9E;
+        }
+
+        html {
+            color: white;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #e2e2e2;
+            font-family: 'Open Sans Condensed';
+        }
+
+        #page {
+            width: 1180px;
+            background-color: white;
+            margin: 0 auto;
+            padding: 0 5px;
+            
+        }
+
+        #page .nav {
+            position: relative;
+            background-color: var(--nav-color);
+            height: 34px;
+        }
+
+        #page .nav .navmenu {
+            float: left;
+            height: 100%;
+        }
+
+        #page .nav .lang {
+            float: left;
+            height: 100%;
+            margin: 6px 0;
+        } 
+
+        #page .nav .lang img {
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+        } 
+
+        #page .nav .search {
+            float:  left;
+            width: 187px;
+            height: 22px;
+            margin: 5px 15px;
+            border-radius: 12px;
+            background-color: #005FBE;
+        }
+
+        #page .nav .search input {
+            position: relative;
+            top: -1px;
+        }
+
+        #page .nav .search span{
+            color: white;
+            font-size: 1rem;
+        }
+
+        #page .nav .search input{
+            width: 150px;
+            height: 100%;
+            font-size: 1rem;
+            margin-left: 13px;
+            background-color: transparent;
+            border-style: none;
+            color: #fff;
+            outline: none;
+            
+        }
+
+        ::placeholder { 
+            color: #999999;
+            font-size: 14px;
+            font-weight: 800;
+            font-family: 'Open Sans';
+        }
+
+        #page .nav .navmenu ul{
+            height: 100%;
+            list-style-type: none;
+            /* padding-left: 15px; */
+        }
+
+        #page .nav .navmenu ul li{
+            float: left;
+            height: 100%;
+            line-height: 34px;
+            margin: 0 15px;
+            font-family: 'Open Sans';
+        }
+        
+        #page .nav .navmenu ul li:first-child {
+            margin-left: 30px;
+        }
+
+        #page .nav .navmenu ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        #page .banner {
+            height: 192px;
+        }
+
+        #page .banner .largeimg {
+            float: left;
+            width: 900px;
+            height: 100%;
+        }
+
+        #page .banner .largeimg img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #page .banner .smalling {
+            float: left;
+            width: 270px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #page .banner .smalling .wrapper {
+            float: left;
+            width: 11111px;
+        }
+
+        #page .banner .smalling .wrapper img{
+            float: left;
+            width: 270px;
+            height: 192px;
+            position: relative;
+            animation: imageChange 30s cubic-bezier(0, 1, 0, 1) infinite;
+        }
+
+        @keyframes imageChange {
+            0% {left: 0;}
+            14.28% {left: -270px;}
+            28.57% {left: -540px}
+            42.85% {left: -810px;}
+            57.14% {left: -1080px;}
+            71.42% {left: -1350px;}
+            89.68% {left: -1620px;}
+            100% {left: -1890px;}
+        }
+
+        #page .mainmenu {
+            height: 50px;
+            background-color: var(--main-color);
+        }
+
+        #page .mainmenu>ul {
+            height: 100%;
+            list-style-type: none;
+        }
+
+        #page .mainmenu>ul>li {
+            height: 100%;
+            float: left;
+            border: 1 px solid red;
+            line-height: 50px;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0 16px;
+            position: relative;
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-family: 'Open Sans Condensed 1';
+        }
+
+        #page .mainmenu>ul>li:nth-child(6) {
+            cursor: pointer;
+        }
+
+        #page .mainmenu>ul>li:last-child >ul{
+            left: -12px;
+        }
+
+        #page .mainmenu>ul>li>ul {
+            /* width: 300px; */
+            display: none;
+            left: 0;
+            position: absolute;
+            z-index: 99;
+            list-style-type: none;
+            background-color: var(--main-color);
+        }
+
+        #page .mainmenu>ul>li>ul>li {
+            width: 270px;
+            background-color: var(--main-color);
+            text-transform: none;
+            height: 34px;
+            line-height: 34px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Open Sans Condensed';
+            color: white;
+        }
+
+        #page .mainmenu>ul>li:hover {
+            color: yellow;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #page .mainmenu>ul>li:hover >ul{
+            display: block;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #page .mainmenu>ul>li>ul>li:hover {
+            position: relative;
+            color: yellow;
+            animation: lac 1s ease;
+            background-color: #0058B0   ;
+            cursor: pointer;
+        }
+
+        @keyframes lac {
+            0% {left: -10px;}
+            20% {left: 8px;}
+            40% {left: -6px;}
+            60% {left: 4px;}
+            80% {left: -2px;}
+            100% {left: 0px;}
+        }
+
+        #page .mainmenu>ul>li>ul>li::before {
+            content: ">>";
+            font-weight: bold;
+            letter-spacing: -1px;
+            padding: 0 8px 0 21px;
+            font-size: 1rem;
+        }
+
+        #page .ads {    
+            height: 35px;
+            background-color: #ffef0f;
+            background-image: linear-gradient(to top, #ececec 0%, rgba(239, 239, 239, 0.52) 33%, rgba(246, 246, 246, 0.52) 100%);
+            margin: 10px 0;
+        }
+
+        #page .ads .left-ads {
+            float: left;
+            height: 100%;
+            text-transform: uppercase;
+            color: yellow;
+            background-color: var(--main-color);
+            line-height: 35px;
+            padding-left: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-family: 'Open Sans Condensed';
+        }
+
+        #page .ads .triangle {
+            width: 20px;
+            height: 100%;
+            float: left;
+            border-left: 20px solid var(--main-color);
+            border-top: 17.5px solid transparent;
+            border-bottom: 17.5px solid transparent;
+           
+        }
+
+        #page .ads .right-ads {
+            font-family: 'Open Sans';
+            height: 100%;
+            width: calc(100% - 120px - 20px);
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            line-height: 35px;
+        }
+
+        @keyframes runningtxt {
+            from {left: 0;}
+            to {left: -3333px;}
+        }
+
+        #page .ads .right-ads .wrapper {
+            position: relative; 
+            animation: runningtxt 60s linear infinite;
+        }
+
+        #page .ads .right-ads .wrapper>ul {
+            list-style-type: none;
+        }
+
+        #page .ads .right-ads .wrapper>ul>li {
+            /* float: left; */
+            display: inline-block;
+        }
+
+        #page .ads .right-ads .wrapper>ul>li .content {
+            /* float: left; */
+            color: red;
+            height: 35px;
+            padding: 0 20px;
+            font-family: 'Open Sans';
+        }
+        
+        #page .ads .right-ads .wrapper>ul>li .sign{
+            float: left;
+            color: blue;
+            letter-spacing: -1.5px;
+            margin: 0 8px;
+            font-size: 0.8rem;;
+        }
+
+        #page .ads .right-ads .wrapper>ul>li .content:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #page .content {
+            height: 430px;
+        }
+
+        #page .content .left-content {
+            float: left;
+            width: 670px;
+        }
+
+        #page .content .left-content .wrapper {
+            overflow: hidden;
+        }
+
+        #page .content .left-content .wrapper>ul {
+            float: left;
+            width: 6666px;
+            list-style-type: none;
+        }
+
+        #page .content .left-content .wrapper>ul>li {
+            float: left;
+            position: relative;
+            animation: sliderImg 30s cubic-bezier(0, 1, 0, 1) infinite;
+        }
+
+        @keyframes sliderImg {
+            0% {left: 0;}
+            14.28% {left: -670px;}
+            28.57% {left: -1340px}
+            42.85% {left: -2010px;}
+            57.14% {left: -2680px;}
+            71.42% {left: -3350px;}
+            89.68% {left: -4020px;}
+            100% {left: -4690px;}
+        }
+
+        #page .content .left-content .wrapper>ul>li img {
+            float: left;
+            width: 670px;
+            height: 430px;
+            /* object-fit: cover; */
+        }
+
+        #page .content .left-content .wrapper>ul>li .main-content {
+            width: 670px;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            padding: 15px;
+            background-color: rgba(0, 101, 202, 0.7);
+            font-family: 'Open Sans 1';
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #fffefe;
+        } 
+
+        #page .content .left-content .wrapper>ul>li .main-content:hover {
+            color: yellow;
+            cursor: pointer;
+        }
+
+        #page .content .right-content {
+            float: left;
+            margin-left: 15px;
+            position: relative;
+            height: 440px;
+        }
+
+        #page .content .right-content .box {
+            float: left;
+            width: calc(1170px - 670px - 15px);
+            height: 185px;
+        }
+
+        #page .content .right-content .box>ul {
+            float: left;
+            list-style-type: none;
+        }
+
+        #page .content .right-content .box>ul>li {
+            float: left;
+            width: 160px;
+            height: 85px;
+            cursor: pointer;
+        }
+
+        #page .content .right-content .box>ul>li:hover {
+            text-decoration: underline;
+            color: #0065ca;
+            font-weight: 800;
+        }
+
+        #page .content .right-content .box>ul>li img {
+            display: block;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+
+        #page .content .right-content .box>ul>li:hover>img {
+            position: relative;
+            animation: moanh 0.75s;
+        }
+
+        @keyframes moanh {
+            0%, 100% {opacity: 1;}
+            25%, 75% {opacity: 0.8;}
+            50% {opacity: 0.6;}
+        }
+
+        #page .content .right-content .box>ul>li span {
+            display: block;
+            text-align: center;
+            font-family: "Open Sans Condensed 1";
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 22px;
+            color: #0065ca;
+            letter-spacing: 0.5px;
+            padding: 10px 0;
+        }
+
+        #page .content .right-content .tab {
+            height: calc(430px - 185px - 1px + 10px - 10px);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-family: "Open Sans Condensed 1";
+        }
+
+        #page .content .right-content .tab .tab-nav {
+            height: 46px;
+            margin-bottom: 14px;
+        }
+
+        #page .content .right-content .tab .tab-nav>ul {
+            float: left;
+            list-style-type: none;
+            width: 100%;
+            border-bottom: 1px solid #0065CA;
+        }
+
+        #page .content .right-content .tab .tab-nav>ul>li {
+            float: left;
+            position: relative;
+            display: block;
+            height: 46px;
+            font-size: 17px;
+            padding: 10px 15px;
+            font-weight: 800;
+            color: #454545;
+            text-transform: uppercase;
+            background-color: transparent;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            margin-right: 2px;
+        }
+
+        #page .content .right-content .tab .tab-nav>ul>li:hover {
+            border: 1px solid #0065CA;
+            border-bottom: 1px solid #0065CA;
+            border-radius: 5px 5px 0 0;
+            color: #0065CA;
+        }
+
+        #page .content .right-content .tab .tab-nav>ul>li:first-child {
+            background-color: #0065CA;
+            border-bottom: 1px solid #0065CA;
+            border-radius: 5px 5px 0 0;
+            color: #fff;
+            cursor: default;
+        }
+
+        #page .content .right-content .tab .tab-content {
+            float: left;
+            height: calc(244px - 46px - 21px);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        #page .content .right-content .tab .tab-content ul p {
+            display: inline-block;
+            color: #0058B0;
+            float: right;
+            position: relative;
+            font-family: "Open Sans 1", Arial, Helvetica, sans-serif;
+            line-height: 22px;
+            font-style: italic;
+            font-weight: bold;
+            padding: 10px 15px 5px 5px;
+            right: 10px;
+        }
+
+        #page .content .right-content .tab .tab-content ul p:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        #page .content .right-content .tab .tab-content>ul {
+            float: left;
+            height: calc(100% - 10px);
+            overflow-y: scroll;
+            list-style-type: none;
+            position: relative;
+            top: 10px;
+        }
+
+        #page .content .right-content .tab .tab-content:hover ::-webkit-scrollbar-thumb{
+            visibility: visible;
+        }
+
+        #page .content .right-content .tab .tab-content>ul::-webkit-scrollbar {
+            width: 6px;
+            height: 100%;
+        }
+
+        #page .content .right-content .tab .tab-content>ul::-webkit-scrollbar-track {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        #page .content .right-content .tab .tab-content>ul::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: #0065C8; 
+            visibility: hidden;
+        }
+
+        #page .content .right-content .tab .tab-content>ul::-webkit-scrollbar-thumb:window-inactive {
+            background: #0065C8; 
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li {
+            float: left;
+            width: 100%;
+            height: 65px;
+            margin-bottom: 13px;
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li:hover {
+            cursor: pointer;
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li:hover img{
+            animation: moanh2 0.5s ease-out 1;
+        }
+        
+        @keyframes moanh2 {
+            0%, 100% {opacity: 1;}
+            50% {opacity: 0.5;}
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li:first-child {
+            margin-top: 10px;
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li img {
+            float: left;
+            width: 85px;
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li span {
+            left: 15px;
+            font-family: "Open Sans 1";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 22px;
+            color: #454545;
+            
+            overflow: hidden;
+            position: relative;
+            text-align: justify;
+            margin-right: -1em;
+            padding-right: 1em;
+            max-height: 44px;
+        }
+
+        #page .content .right-content .tab .tab-content>ul>li span:hover {
+            color: var(--main-color);
+            text-decoration: underline;
+        }
+
+        #page .links { 
+            height: calc(32px + 63.3px + 10px);
+            margin: 10px 0;
+            margin-bottom: 25px;
+        }
+
+        #page .links .link {
+            position: relative;
+            font-family: "Open Sans Condensed 1", Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 22px;
+            color: #454545;
+            text-transform: uppercase;
+            padding: 8px 0;
+        }
+
+        #page .links .link i {
+            height: 28px;
+            width: 28px;
+            position: absolute;
+            top: 8px;
+            border: 1px solid #dfdfdf;
+            text-align: center;
+            cursor: pointer;
+            color: #DFDFDC;;
+            line-height: 28px;
+        }
+
+        #page .links .link i:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #8F8F8F;
+        }
+
+        #page .links .link i:last-child {
+            position: absolute;
+            right: 0;
+        }
+
+        #page .links .link i:first-child {
+            position: absolute;
+            right: 35px;
+        }
+
+        #page .links .wrapper {
+            overflow: hidden;
+        }
+
+        #page .links .wrapper>ul {
+            width: 8888px;
+            height: calc(100% - 38px + 10px);
+            list-style-type: none;
+            margin-top: 5px;
+            position: relative;
+            animation-play-state: running;
+        }
+
+        @keyframes sliderLinks {
+            0% {left: 0;}
+            10% {left: -240px;}
+            20% {left: -480px;}
+            30% {left: -720px;}
+            40% {left: -960px;}
+            50% {left: -1200px;}
+            60% {left: -1440px;}
+            70% {left: -1680px;}
+            80% {left: -1920px;}
+            90% {left: -2160px;}
+            100% {left: -2400px;}
+        }
+
+        #page .links .wrapper>ul>li {
+            position: relative;
+            animation: sliderLinks 40s cubic-bezier(0, 1, 0, 1) infinite;
+        }
+
+        #page .links .wrapper>ul>li img {
+            float: left;
+            width: 210px;
+            height: 63.3px;
+            margin-right: 30px;
+        }
+
+        #page .links .wrapper>ul>li img:hover {
+            cursor: pointer;
+            animation: moanh 0.5s;
+        }
+
+        #page .footer {
+            height: 200px;
+            background-color: #0065ca;
+            color: #fff;
+            font-family: "Open Sans 1", Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            padding: 15px;
+        }
+
+        #page .footer .left-footer {
+            float: left;
+            width: 50%;
+            padding-top: 26px;
+        }
+
+        #page .footer .left-footer .footer-content {
+            margin-top: -3px;
+        }
+
+        #page .footer .left-footer .f-footer{
+            margin-top: -3px;
+        }
+
+        #page .footer .left-footer .f-footer:hover {
+            cursor: pointer;
+        }
+
+        #page .footer .right-footer {
+            float: left;
+            margin: 7px 0 0 112px;
+        }
+
+        #page .footer .right-footer .lst-img {
+            /* float: left; */
+            width: 100%;
+            height: 81px;
+            margin-bottom: 11px;
+        }
+
+        #page .footer .right-footer .lst-img img{
+            float: left;
+            margin-right: 33px;
+        }
+
+        #page .footer .right-footer .lst-img img:last-child {
+            cursor: pointer;
+        }
+
+        #page .footer .right-footer .lst-img i {
+            float: left;
+            width: 40px;
+            line-height: 69px;
+        }
+
+        #page .footer .right-footer .lst-img i:hover {
+            cursor: pointer;
+        }
+
+        #page .footer .right-footer .design-by {
+            margin-bottom: 5px;
+        }
+
+        #page .footer .right-footer .design-by:hover {
+            cursor: pointer;
+        }
+
+        #page .footer .right-footer .item a{
+            color: white;
+            text-decoration: none;
+        }
+
+        #page .footer .right-footer .item a:hover {
+            cursor: pointer;
+            position: relative;
+
+        }
+        
+        #page {
+            position: relative;
+            top: 0;
+        }
+        
+        @keyframes home {
+            from {top:0};
+            to {top: -100px};
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="page">
+        <div class="nav">
+            <div class="navmenu">
+                <ul>
+                    <li><a href="">Mục tiêu PT bền vững</a></li>
+                    <li><a href="">HĐ giáo sư</a></li>
+                    <li><a href="">Dịch vụ công</a></li>
+                    <li><a href="">E-learning</a></li>
+                    <li><a href="">E-office</a></li>
+                    <li><a href="">Thông tin nội bộ</a></li>
+                    <li><a href="">Sitemap</a></li>
+                    <li><a href="">Email</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm ..."/>
+                <!-- <i class="fa fa-search"></i> -->
+                <span class="glyphicon glyphicon-search" style="line-height: 24px"></span>  
+            </div>
+            <div class="lang">
+                <a href="https://en.neu.edu.vn/">
+                    <img src="imgs/Nav/language.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="largeimg">
+                <img src="imgs/Banner/logo.jpg" alt="">
+            </div>
+            <div class="smalling">
+                <div class="wrapper">
+                    <ul>
+                        <img src="imgs/Banner/1.jpg" alt="">
+                        <img src="imgs/Banner/2.jpg" alt="">
+                        <img src="imgs/Banner/3.jpg" alt="">
+                        <img src="imgs/Banner/4.jpg" alt="">
+                        <img src="imgs/Banner/5.jpg" alt="">
+                        <img src="imgs/Banner/6.jpg" alt="">
+                        <img src="imgs/Banner/7.jpg" alt="">
+                        <img src="imgs/Banner/1.jpg" alt="">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mainmenu">
+            <ul>
+                <li>Giới thiệu
+                    <ul>
+                        <li>Lịch sử hình thành và phát triển trường</li>
+                        <li>Chiến lược phát triển Trường đại học Kinh tế Quốc dân giai đoạn 2021 - 2030</li>
+                        <li>Thư hiệu trưởng</li>
+                        <li>Hệ thống nhận diện</li>
+                        <li>Bản đồ đường đi</li>
+                        <li>Cơ cấu tổ chức</li>
+                        <li>Ba công khai</li>
+                        <li>Mạng lưới Cựu sinh viên</li>
+                    </ul>
+                </li>
+                <li>Đơn vị
+                    <ul>
+                        <li>Phòng ban</li>
+                        <li>Viện</li>
+                        <li>Khoa</li>
+                        <li>Trung tâm</li>
+                        <li>TC CTXH</li>
+                        <li>Hội đồng Giáo sư</li>
+                    </ul>
+                </li>
+                <li>Đào tạo
+                    <ul>
+                        <li>Đại học</li>
+                        <li>Sau đại học</li>
+                        <li>Chương trình tiên tiến</li>
+                        <li>Đào tạo ngắn hạn</li>
+                    </ul>
+                </li>
+                <li>Hợp tác quốc tế
+                    <ul>
+                        <li>Giới thiệu về hợp tác Quốc tế</li>
+                        <li>Tin tức về hợp tác Quốc tế</li>
+                        <li>Chương trình liên kết đào tạo</li>
+                        <li>Mạng lưới hợp tác quốc tế</li>
+                        <li>Cơ hội và học bổng</li>
+                    </ul>
+                </li>
+                <li>Nghiên cứu khoa học
+                    <ul>
+                        <li>Thông báo</li>
+                        <li>Thư mời viết bài hội thảo</li>
+                        <li>Đề tài</li> 
+                        <li>Hội thảo</li>
+                        <li>Tọa đàm</li>
+                        <li>NCKH sinh viên</li>
+                        <li>Sản phẩm NCKH</li>
+                        <li>Hướng dẫn triển khai hoạt động KHCN</li>
+                        <li>Useful Links</li>
+                        <li>Văn bản quản lý</li>
+                    </ul>
+                </li>
+                <li>Tuyển sinh</li>
+                <li>Dịch vụ
+                    <ul>
+                        <li>Dịch vụ công</li>
+                        <li>E-Office</li>
+                        <li>Thư viện</li>
+                        <li>Quản lý đào tạo</li>
+                        <li>Web cũ NEU</li>
+                        <li>Tra cứu văn bằng</li>
+                        <li>Lấy ý kiến người học</li>
+                        <li>Quản lý giảng đường</li>
+                        <li>NEU book</li>
+                    </ul>
+                </li>
+                <li>Đảng - đoàn thể
+                    <ul>
+                        <li>Đảng bộ</li>
+                        <li>Công đoàn</li>
+                        <li>Đoàn Thanh Niên</li>
+                        <li>Hội sinh viên</li>
+                        <li>Hội cựu Chiến binh</li>
+                    </ul>
+                </li>
+                <li>Thông báo - tin tức
+                    <ul>
+                        <li>Thông báo</li>
+                        <li>Phòng chống dịch Virus Covid-19</li>
+                        <li>HỖ TRỢ COVID-19</li>
+                        <li>Thông báo tuyển sinh</li>
+                        <li>Thông tin kinh tế</li>
+                        <li>Bản tin nội bộ</li>
+                        <li>Tuyên truyền pháp luật</li>
+                        <li>QUỐC HỘI XV</li>
+                        <li>Mục tiêu Phát triển Bền vững (SDGs)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="ads">
+            <div class="left-ads">Đang tuyển sinh</div>
+            <div class="triangle"></div>
+            <div class="right-ads">
+                <div class="wrapper">
+                <ul>
+                        <li><div class="sign">>></div><div class="content"> Thông báo Tuyển sinh Chương trình Cử nhân Quốc tế IBD@NEU  Khóa 18, Kỳ Mùa Thu 2022 (bổ sung ngành Digital Marketing)</div></li>
+                        <li><div class="sign">>></div><div class="content"> Thông báo Điều chỉnh thời hạn và lịch trình tuyển sinh Chương trình Cử nhân Quốc tế Digital Marketing, Kỳ Mùa Thu 2022, Đợt 1</div></li>
+                        <li><div class="sign">>></div><div class="content"> Thông báo tuyển sinh trình độ Đại học hình thức Vừa làm vừa học</div></li>
+                        <li><div class="sign">>></div><div class="content"> Thông báo Tuyển sinh Chương trình Thạc sĩ Quản trị Kinh doanh đào tạo bằng tiếng Anh (E-MBA) khoá 21năm 2022</div></li>
+                        <li><div class="sign">>></div><div class="content"> Tuyển sinh Chương trình Thạc sỹ Điều hành Quản trị Kinh doanh Quốc tế (Thạc sỹ PGSM) - Khóa 9</div></li>
+                        <li><div class="sign">>></div><div class="content"> Thông báo tuyển sinh trình độ thạc sĩ năm 2022</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <div class="wrapper">
+                    <ul>
+                        <li>
+                            <img src="imgs/Content/l1.jpg" alt="">
+                            <div class="main-content">Chủ tịch nước gửi thư mừng khai giảng</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l2.jfif" alt="">
+                            <div class="main-content">939 Tân cử nhân Chương trình Tiên tiến, Chất lượng cao & POHE, Khoá 60 rạng rỡ ngày tốt nghiệp</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l3.jfif" alt="">
+                            <div class="main-content">Toạ đàm: Định hướng phát triển bền vững của Tổng Công ty Đầu tư và Phát triển công nghiệp  - Becamex</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l4.jfif" alt="">
+                            <div class="main-content">Seminar: “Chiến lược để tăng khả năng được chấp nhận đăng bài quốc tế - Góc nhìn từ thành viên Ban Biên tập Tạp chí quốc tế”</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l5.jfif" alt="">
+                            <div class="main-content">Trường Đại học Kinh tế Quốc dân làm việc với Ban Xúc tiến và Hỗ trợ Đầu tư Quảng Ninh</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l6.jfif" alt="">
+                            <div class="main-content">Trường Đại học Kinh tế Quốc dân phối hợp với ICDL Việt Nam tổ chức thành công Diễn đàn Năng lực công nghệ số 2022</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l7.jfif" alt="">
+                            <div class="main-content">Doanh nhân Đặng Văn Thành - Chủ tịch Tập đoàn TTC chia sẻ kinh nghiệm Quản trị và Điều hành doanh nghiệp trong xu thế hội nhập cùng sinh viên NEU</div>
+                        </li>
+                        <li>
+                            <img src="imgs/Content/l1.jpg" alt="">
+                            <div class="main-content">Chủ tịch nước gửi thư mừng khai giảng</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="box">
+                    <ul>
+                        <li><img src="imgs/Content/b1.png" alt=""><span>Sv tương lai</span></li>
+                        <li><img src="imgs/Content/b2.png" alt=""><span>Cán bộ</span></li>
+                        <li><img src="imgs/Content/b3.png" alt=""><span>Sinh viên</span></li>
+                        <li><img src="imgs/Content/b4.png" alt=""><span>Cựu sv</span></li>
+                        <li><img src="imgs/Content/b5.png" alt=""><span>Đối tác</span></li>
+                        <li><img src="imgs/Content/b6.png" alt=""><span>Công bố quốc tế</span></li>
+                    </ul>
+                </div>
+                <div class="tab">
+                    <div class="tab-nav">
+                        <ul>
+                            <li>Bản tin NEU</li>
+                            <li>Bản tin đơn vị</li>
+                            <li>Sự kiện</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <ul>
+                            <li><img src="imgs/Content/l1.jpg" alt=""><span>Hội nghị triển khai Đề án gia tăng công bố quốc tế giai đoạn mới </span></li>
+                            <li><img src="imgs/Content/l2.jfif" alt=""><span>939 Tân cử nhân Chương trình Tiên tiến, Chất lượng cao & POHE, Khoá 60 rạng rỡ ngày tốt nghiệp</span></li>
+                            <li><img src="imgs/Content/l3.jfif" alt=""><span>Toạ đàm: Định hướng phát triển bền vững của Tổng Công ty Đầu tư và Phát triển công nghiệp  - Becamex</span></li>
+                            <li><img src="imgs/Content/l4.jfif" alt=""><span>Trường Đại học Kinh tế Quốc dân làm việc với Ban Xúc tiến và Hỗ trợ Đầu tư Quảng Ninh</span></li>
+                            <p>Xem các tin khác</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="links">
+            <div class="link">Liên kết
+                <i class="fa fa-angle-left" style="font-size:20px"></i>
+                <i class="fa fa-angle-right" style="font-size:20px"></i>
+            </div>
+            <div class="wrapper">
+                <ul>
+                    <li><img src="imgs/Links/1.png" alt=""></li>
+                    <li><img src="imgs/Links/2.png" alt=""></li>
+                    <li><img src="imgs/Links/3.png" alt=""></li>
+                    <li><img src="imgs/Links/4.png" alt=""></li>
+                    <li><img src="imgs/Links/5.png" alt=""></li>
+                    <li><img src="imgs/Links/6.png" alt=""></li>
+                    <li><img src="imgs/Links/7.jpg" alt=""></li>
+                    <li><img src="imgs/Links/8.jpg" alt=""></li>
+                    <li><img src="imgs/Links/9.png" alt=""></li>
+                    <li><img src="imgs/Links/10.png" alt=""></li>
+                    <li><img src="imgs/Links/11.png" alt=""></li>
+                    <li><img src="imgs/Links/12.png" alt=""></li>
+                    <li><img src="imgs/Links/13.png" alt=""></li>
+                    <li><img src="imgs/Links/14.png" alt=""></li>
+                    <li><img src="imgs/Links/15.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="left-footer">
+                <p>Copyright © 2016 - Trường Đại học Kinh tế Quốc dân. All Rights Reserved</p>
+                <div class="footer-content">
+                    <i class="fa fa-home" style="float: left; height: 22px; line-height: 22px; margin-right: 10px;"></i>
+                    <p>207 Giải Phóng, Đồng Tâm, Quận Hai Bà Trưng, Hà Nội, Vietnam</p>
+                </div>
+                <div class="f-footer">
+                    <p>
+                        <i class="fa fa-phone" style="height: 22px; line-height: 22px; margin-right: 7px;"></i>
+                        (84)24.36.280.280   
+                        <i class="fa fa-fax" style="height: 22px; line-height: 22px; margin-right: 7px; margin-left: 14px;"></i>
+                        (84)24.38.695.992     
+                        <span class="lk" style="margin-left: 14px;">https://360.neu.edu.vn/ </span>
+                    </p>
+                </div>
+            </div>
+            <div class="right-footer">
+                <div class="lst-img">
+                    <img src="imgs/Footer/red.png" alt="" >
+                    <i class="fa fa-facebook-f" style="font-size:28px;"></i>
+                    <i class="fa fa-youtube" style="font-size:28px; width: 48px;"></i>
+                    <i class="fa fa-twitter" style="font-size:28px; width: 50px;"></i>
+                    <img src="imgs/Footer/logobgdvadt.png" style="width:81px; height:81px"  alt="" >
+                </div>
+                <div class="design-by">Designed and Developed by <img src="imgs/Footer/logo_PSC_W.png" alt=""> </div>
+                <div class="item">Mọi đóng góp xin gửi về: <a>ask-cait@neu.edu.vn </a>|
+                    <br />
+                    <a>dhktqd@neu.edu.vn</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script> -->
+</body>
+</html>

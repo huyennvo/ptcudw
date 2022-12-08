@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 4;
+        let b = 2;
+        let c = -6;
+        let x1, x2, delta;
+        //ax+bx+c=0
+        if(a == 0) {
+            x1=-b/c;
+            console.log("Phuong trinh da cho co nghiem la:" + x1);
+        }
+        else {
+            delta = b*b-4*a*c;
+            if(delta < 0) console.log("Phuong trinh vo nghiem")
+            else {
+                if(delta == 0) {
+                    x1 = -b/(2*a);
+                    console.log("Phuong trinh co nghiem kep la: " +x1);
+                }
+                else{
+                    x1 = (-b+Math.sqrt(delta)/(2*a));
+                    x2 = (-b-Math.sqrt(delta)/(2*a));
+                    console.log("Phuong trinh co 2 nghiem la: " + x1 + " va " + x2);
+                
+                } 
+            }
+        }
+    </script>
+</body>
+</html>

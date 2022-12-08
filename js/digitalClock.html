@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Digital lock</title>
+     <style>
+        body{
+            display:flex;
+            justify-content: center;
+            font-size: 200px;
+        }
+     </style>
+ </head>
+ <body>
+     <div>
+        <span id="gio">00</span>
+        <span>:</span>
+        <span id="phut">00</span><span>:</span>
+        <span id="giay">00</span>
+     </div>
+     <script>
+        function Dong_ho() {
+            var gio = document.getElementById("gio");
+            var phut = document.getElementById("phut");
+            var giay = document.getElementById("giay");
+            var gioHienTai = new Date().getHours();
+            var phutHienTai = new Date().getMinutes();
+            var giayHienTai = new Date().getSeconds();
+            if(gioHienTai < 10) gioHienTai = "0" + gioHienTai;
+            if(phutHienTai < 10) gioHienTai = "0" + phutHienTai;
+            if(giayHienTai < 10) gioHienTai = "0" + giayHienTai;
+            gio.innerHTML = gioHienTai;
+            phut.innerHTML = phutHienTai;
+            giay.innerHTML = giayHienTai;
+        }
+       setInterval(Dong_ho, 1000);
+    </script>
+ </body>
+ </html>
